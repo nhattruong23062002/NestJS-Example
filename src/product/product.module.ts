@@ -10,3 +10,4 @@ import { ProductSchema } from 'src/schemas/product.schema';
   providers: [ProductService]
 })
 export class ProductModule {}
+

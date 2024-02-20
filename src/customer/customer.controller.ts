@@ -47,9 +47,12 @@ import { CreateCustomerDto } from './dto/create-customer.dto';
         customer: CreateCustomerDto,
       ): Promise<ResponseData<Customer>> {
         try {
+          console.log('««««« customer »»»»»', customer);
           const newCustomer = await this.customerService.create(customer);
+          console.log('««««« newCustomer »»»»»', newCustomer);
           return new ResponseData<Customer>(200, 'Create success', newCustomer);     
         } catch (error) {
+          console.error('Error creating customer:', error);
           return new ResponseData<Customer>(404, 'Server Internal Error',null);  
         }
       }  

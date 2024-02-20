@@ -14,6 +14,7 @@ import { Category } from 'src/schemas/category.schema';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { ResponseData } from 'src/global/globalClass';
 import { AuthGuard } from '@nestjs/passport';
+import { UpdateCategoryDto } from './dto/update-category.dto';
 
   @Controller('category')
   export class CategoryController {
@@ -62,7 +63,7 @@ import { AuthGuard } from '@nestjs/passport';
       @Param('id')
       id: string,
       @Body()
-      category: CreateCategoryDto,
+      category: UpdateCategoryDto,
     ):  Promise<ResponseData<Category>> {
       try {
         const categoryUpdate = await this.categoryService.updateById(id, category);

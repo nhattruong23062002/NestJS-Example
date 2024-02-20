@@ -28,6 +28,7 @@ export class CustomerService {
 
   async create(customer: Customer): Promise<Customer> {
     const res = await this.customerModel.create(customer);
+    console.log('««««« res »»»»»', res);
     return res;
   }
 
